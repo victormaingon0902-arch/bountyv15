@@ -1,0 +1,63 @@
+name: BountyCraft
+version: '${project.version}'
+main: fr.bountycraft.BountyCraft
+api-version: '26.3'
+description: Économie, primes, chasses à l'homme, PNJ (Hunter, Forgeron, Alchimiste, Guide) et élixirs
+authors: [BountyCraft]
+
+commands:
+  bank:
+    description: Affiche votre solde
+    usage: /bank [joueur]
+    aliases: [balance, bal, money]
+  pay:
+    description: Envoyer de l'argent à un joueur
+    usage: /pay <joueur> <montant>
+  baltop:
+    description: Classement des joueurs les plus riches
+    usage: /baltop
+    aliases: [richest]
+  contract:
+    description: Voir ou annuler votre contrat Hunter
+    usage: /contract [cancel]
+    aliases: [contrat]
+  eco:
+    description: Administration de l'économie
+    usage: /eco <give|take|set|reset> <joueur> [montant]
+    permission: bountycraft.admin.eco
+  hunt:
+    description: Lance ou arrête une chasse à l'homme
+    usage: /hunt <ban|event> <temps> <joueur> [durée-du-ban|def] | /hunt stop | /hunt info
+    permission: bountycraft.admin.hunt
+  npc:
+    description: Gestion des PNJ
+    usage: /npc <create|remove|skin|skinall|list>
+    permission: bountycraft.admin.npc
+  kit:
+    description: Création des kits shulker et réservation à un grade (admin)
+    usage: /kit <create|update|perm|key|list>
+    permission: bountycraft.admin
+  bountycraft:
+    description: Administration du plugin
+    usage: /bountycraft <reload|give|pack|ids|reset>
+    aliases: [bc]
+    permission: bountycraft.admin
+
+permissions:
+  bountycraft.admin:
+    description: Toutes les commandes d'administration
+    default: op
+    children:
+      bountycraft.admin.eco: true
+      bountycraft.admin.hunt: true
+      bountycraft.admin.npc: true
+      bountycraft.bank.others: true
+  bountycraft.admin.eco:
+    default: op
+  bountycraft.admin.hunt:
+    default: op
+  bountycraft.admin.npc:
+    default: op
+  bountycraft.bank.others:
+    description: Voir le solde des autres joueurs
+    default: op

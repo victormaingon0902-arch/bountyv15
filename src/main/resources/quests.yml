@@ -1,0 +1,113 @@
+# ======================================================================
+#  Quêtes du PNJ Quêtier - modifiez / ajoutez librement, puis /bountycraft reload
+#  Une quête est tirée au hasard ; une nouvelle est possible toutes les heures.
+#
+#  type: DELIVER  -> rapporter des objets (liste "items", noms de matériaux Minecraft)
+#  type: KILL     -> tuer des créatures (liste "targets", ex: zombie, skeleton, creeper)
+#  amount: quantité   reward: récompense en argent
+#  (les objets rendus doivent être "normaux" : ni renommés ni enchantés)
+# ======================================================================
+settings:
+  cooldown-minutes: 60            # délai entre deux quêtes (après avoir terminé)
+  abandon-cooldown-minutes: 5     # délai si on abandonne une quête
+
+quests:
+  zombies:
+    type: KILL
+    name: "Nettoyeur de zombies"
+    description: "Tuez 25 zombies"
+    targets: [zombie, zombie_villager, husk, drowned]
+    amount: 25
+    reward: 800
+  skeletons:
+    type: KILL
+    name: "Chasseur d'os"
+    description: "Tuez 20 squelettes"
+    targets: [skeleton, stray, bogged]
+    amount: 20
+    reward: 800
+  spiders:
+    type: KILL
+    name: "Arachnophobe"
+    description: "Tuez 20 araignées"
+    targets: [spider, cave_spider]
+    amount: 20
+    reward: 700
+  creepers:
+    type: KILL
+    name: "Démineur"
+    description: "Tuez 12 creepers"
+    targets: [creeper]
+    amount: 12
+    reward: 900
+  endermen:
+    type: KILL
+    name: "Regard interdit"
+    description: "Tuez 8 endermen"
+    targets: [enderman]
+    amount: 8
+    reward: 1200
+
+  coal:
+    type: DELIVER
+    name: "Chauffage d'hiver"
+    description: "Rapportez 64 charbons"
+    items: [COAL]
+    amount: 64
+    reward: 700
+  iron:
+    type: DELIVER
+    name: "Forgeron pressé"
+    description: "Rapportez 48 lingots de fer"
+    items: [IRON_INGOT]
+    amount: 48
+    reward: 1300
+  copper:
+    type: DELIVER
+    name: "Électricien"
+    description: "Rapportez 64 lingots de cuivre"
+    items: [COPPER_INGOT]
+    amount: 64
+    reward: 800
+  wheat:
+    type: DELIVER
+    name: "Boulanger du village"
+    description: "Rapportez 128 blés"
+    items: [WHEAT]
+    amount: 128
+    reward: 800
+  carrots:
+    type: DELIVER
+    name: "Soupe du jour"
+    description: "Rapportez 96 carottes"
+    items: [CARROT]
+    amount: 96
+    reward: 700
+  potatoes:
+    type: DELIVER
+    name: "Frites maison"
+    description: "Rapportez 96 pommes de terre"
+    items: [POTATO]
+    amount: 96
+    reward: 700
+  fish:
+    type: DELIVER
+    name: "Pêche du jour"
+    description: "Rapportez 24 poissons (morue ou saumon)"
+    items: [COD, SALMON]
+    amount: 24
+    reward: 800
+  cobblestone:
+    type: DELIVER
+    name: "Maçon"
+    description: "Rapportez 256 pierres taillées"
+    items: [COBBLESTONE]
+    amount: 256
+    reward: 500
+  logs:
+    type: DELIVER
+    name: "Bûcheron"
+    description: "Rapportez 128 bûches de chêne ou de bouleau"
+    items: [OAK_LOG, BIRCH_LOG]
+    amount: 128
+    reward: 600

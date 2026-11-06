@@ -1,0 +1,100 @@
+# ======================================================================
+#  Boutique du Forgeron - AJOUTEZ VOS OUTILS / ARMES ICI, sans toucher au plugin
+#  Après modification : /bountycraft reload
+#
+#  Chaque entrée sous "items:" devient un article de la boutique.
+#  Champs :
+#    price         prix (obligatoire)
+#    material      matériau Minecraft (ex: NETHERITE_SWORD)
+#    name          nom (MiniMessage)
+#    lore          liste de lignes (MiniMessage)
+#    item-model    texture/modèle du resource pack, ex: "bountycraft:mon_item"
+#    unbreakable   true/false
+#    enchantments  nom_minecraft: niveau  (ex: efficiency: 10, niveaux > vanilla acceptés)
+#    abilities     capacités spéciales (voir ci-dessous)
+#
+#  Capacités disponibles :
+#    area-mine:   { radius: 1, only-preferred-tool: true }   -> mine en cube (radius 1 = 3x3x3, 2 = 5x5x5)
+#    tree-feller: true                                       -> coupe l'arbre entier
+#    ignite:      { seconds: 5 }                             -> enflamme ce que l'on frappe
+#    lifesteal:   { percent: 10 }                            -> soigne d'un % des dégâts infligés
+#  Accroupi (shift) = capacités désactivées (si settings.sneak-disables-abilities: true)
+# ======================================================================
+settings:
+  max-tree-blocks: 500
+  require-leaves: true            # n'abat que de vrais arbres (évite de raser une cabane en bois)
+  sneak-disables-abilities: true
+
+items:
+  jungles_heart_pickaxe:
+    price: 25000
+    material: NETHERITE_PICKAXE
+    name: "<gradient:#2e8b57:#a8e063><bold>Pioche du Cœur de la Jungle"
+    lore:
+      - "<gray>Forgée au cœur de la jungle."
+      - ""
+      - "<green>» <white>Mine en <yellow>3x3x3"
+      - "<green>» <white>Efficacité <yellow>X<white>, Fortune <yellow>V"
+      - "<green>» <white>Incassable"
+      - ""
+      - "<dark_gray>Accroupi : minage normal"
+    item-model: "bountycraft:jungles_heart_pickaxe"
+    unbreakable: true
+    enchantments:
+      efficiency: 10
+      fortune: 5
+    abilities:
+      area-mine:
+        radius: 1
+        only-preferred-tool: true
+
+  jungles_heart_axe:
+    price: 20000
+    material: NETHERITE_AXE
+    name: "<gradient:#2e8b57:#a8e063><bold>Hache du Cœur de la Jungle"
+    lore:
+      - "<gray>Forgée au cœur de la jungle."
+      - ""
+      - "<green>» <white>Abat l'arbre <yellow>en entier"
+      - "<green>» <white>Efficacité <yellow>X"
+      - "<green>» <white>Incassable"
+      - ""
+      - "<dark_gray>Accroupi : coupe normale"
+    item-model: "bountycraft:jungles_heart_axe"
+    unbreakable: true
+    enchantments:
+      efficiency: 10
+    abilities:
+      tree-feller: true
+
+  # ----- Exemples d'armes (modifiez / supprimez à volonté) ---------------
+  hunter_blade:
+    price: 15000
+    material: NETHERITE_SWORD
+    name: "<gradient:#ff4b2b:#ff416c><bold>Lame du Chasseur"
+    lore:
+      - "<gray>L'arme des chasseurs de primes."
+      - ""
+      - "<red>» <white>Vol de vie <yellow>10%"
+      - "<red>» <white>Incassable"
+    unbreakable: true
+    enchantments:
+      sharpness: 7
+      looting: 3
+      sweeping_edge: 3
+    abilities:
+      lifesteal:
+        percent: 10
+
+  ember_bow:
+    price: 12000
+    material: BOW
+    name: "<gradient:#ff9a1a:#ff3d00><bold>Arc des Braises"
+    lore:
+      - "<gray>Ses flèches embrasent tout."
+      - "<red>» <white>Incassable"
+    unbreakable: true
+    enchantments:
+      power: 8
+      flame: 1
+      infinity: 1

@@ -1,0 +1,12 @@
+# Marchand : liste volontairement limitée aux poissons et cultures demandés.
+# Prix faibles, par objet.
+prices:
+  COD: 2
+  SALMON: 3
+  TROPICAL_FISH: 3
+  PUFFERFISH: 3
+  MELON_SLICE: 1
+  POTATO: 1
+  CARROT: 1
+  BEETROOT: 1
+  ROTTEN_FLESH: 1

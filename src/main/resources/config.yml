@@ -1,0 +1,151 @@
+# ======================================================================
+#  BountyCraft - configuration principale
+#  Les textes utilisent le format MiniMessage (<red>, <gold>, <bold>...)
+# ======================================================================
+prefix: "<dark_gray>[<gold>Bounty<dark_gray>] <gray>"
+
+economy:
+  currency-symbol: "$"
+  starting-balance: 500
+  autosave-minutes: 5
+
+# --- Primes du PNJ Hunter -------------------------------------------
+# prime = max(min, base * decay ^ (nombre de morts de la cible causées par des joueurs))
+# Moins la cible est morte de la main d'un joueur, plus la prime est grosse.
+bounty:
+  base: 2000
+  decay: 0.85
+  min: 100
+  contract-duration-minutes: 60
+  target-protection-minutes: 10   # une cible tuée ne peut pas être re-contractée pendant ce délai
+  notify-target: true             # prévient la cible (sans donner le nom du chasseur)
+  show-distance: true             # distance + flèche dans l'action bar du chasseur
+
+# --- Évènement /hunt (admin) ----------------------------------------
+# prime = max(min-reward, prime Hunter de la cible * reward-multiplier)  (ou valeur donnée à /hunt)
+hunt-event:
+  duration-minutes: 30
+  reward-multiplier: 5
+  min-reward: 5000
+
+# --- PNJ ---------------------------------------------------------------
+npcs:
+  default-skin: ""     # pseudo d'un joueur pour le skin des nouveaux PNJ (vide = skin par défaut)
+  hunter:
+    name: "<dark_red><bold>Hunter"
+    description: "<gray>Chasseur de primes"
+  blacksmith:
+    name: "<gold><bold>Forgeron"
+    description: "<gray>Armes & outils légendaires"
+  alchemist:
+    name: "<light_purple><bold>Alchimiste"
+    description: "<gray>Élixirs spéciaux"
+  guide:
+    name: "<aqua><bold>Guide"
+    description: "<gray>Infos, règles & aide"
+  quest:
+    name: "<yellow><bold>Quêtier"
+    description: "<gray>Une quête par heure"
+  merchant:
+    name: "<green><bold>Marchand"
+    description: "<gray>Rachète vos récoltes"
+
+# --- Texture de la clé de chaque kit (resource pack) -----------------
+# Textures disponibles : copper, fire, gold, diamond, iron, amethyst, steel, wood.
+# Ce sont les valeurs PAR DÉFAUT : /kit key <kit> <texture> (enregistré dans kits.yml) est prioritaire.
+kit-keys:
+  kingbette: fire
+  kit_de_base: wood
+  basic_kit: copper
+  vip: gold
+  pvp: diamond
+  ultra_pvp_kit: amethyst
+  troll: iron
+  debile: steel
+
+# --- Resource pack (textures des potions, pioche, hache et clés de kits) -----------
+# Hébergez BountyCraft-ResourcePack.zip (lien de téléchargement direct) puis
+# renseignez l'url. Le sha1 doit correspondre exactement au zip hébergé.
+resource-pack:
+  url: ""
+  sha1: "5b30c2ac15a217466d397fecbb1c630378c73ae1"
+  required: false
+  prompt: "<gold>Pack de textures du serveur <gray>(objets personnalisés)"
+
+# --- Élixirs de l'Alchimiste -----------------------------------------
+# duration-minutes : durée de l'élixir (effets passifs + compétence). -1 = jusqu'à la mort.
+# server-purchase-limit : maximum d'achats par type pour tout le serveur (les dons admin ne comptent pas).
+# Les options *-level permettent de régler le niveau (I = 1). Compétence : touche F.
+elixirs:
+  base-material: HONEY_BOTTLE   # objet de base (la texture custom vient du resource pack)
+
+  invisibility:
+    server-purchase-limit: 5
+    invisibility-level: 1
+    price: 15000
+    duration-minutes: -1          # invisibilité permanente
+    skill-duration-seconds: 300   # aura de ténèbres : 5 minutes
+    skill-cooldown-seconds: 600
+    darkness-radius: 10
+
+  warden:
+    server-purchase-limit: 5
+    health-boost-level: 5
+    price: 20000
+    duration-minutes: 30
+    skill-cooldown-seconds: 20
+    skill-damage: 20              # points de vie (10 = 5 coeurs)
+    skill-range: 20
+
+  heal:
+    server-purchase-limit: 5
+    regeneration-level: 2
+    price: 8000
+    duration-minutes: 30
+    skill-duration-seconds: 30
+    skill-cooldown-seconds: 120
+    heal-per-second: 4
+
+  emerald:
+    price: 10000
+    duration-minutes: 30
+    server-purchase-limit: 5
+    hero-level: 3
+    haste-level: 2
+
+  wind:
+    server-purchase-limit: 5
+    price: 7000
+    duration-minutes: 30
+    launch-power: 0.9 # propulsion verticale (0.9 = environ 5 blocs de haut)
+    dash-delay-ticks: 8 # délai entre la propulsion et le dash (20 ticks = 1 s)
+    skill-power: 1.3 # vitesse du dash horizontal (1.0 = ~8 blocs, 1.3 = ~11, 1.8 = ~15)
+    dash-lift: 0.2 # légère montée au moment du dash
+
+  end:
+    server-purchase-limit: 5
+    price: 25000
+    duration-minutes: 30
+    teleport-max-distance: 40     # téléportation : aucun cooldown
+    breath-cooldown-seconds: 15   # souffle du dragon : Shift + F
+    breath-radius: 3.0
+
+  fire:
+    server-purchase-limit: 5
+    fire-resistance-level: 1
+    price: 12000
+    duration-minutes: 30
+    skill-duration-seconds: 180
+    skill-cooldown-seconds: 240
+    ignite-seconds: 5
+    # blocs/objets jamais cuits (les bûches/troncs ne sont jamais cuits en charbon)
+    smelt-blacklist: [CACTUS, SEA_PICKLE, KELP]
+
+  water:
+    price: 12000
+    duration-minutes: 30
+    server-purchase-limit: 5
+    dolphins-grace-level: 2
+    conduit-power-level: 1
+    skill-duration-seconds: 900   # pluie + trident : 15 minutes
+    skill-cooldown-seconds: 1200

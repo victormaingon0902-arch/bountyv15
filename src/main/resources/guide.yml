@@ -1,0 +1,80 @@
+# ======================================================================
+#  PNJ Guide - modifiez librement. Après modification : /bountycraft reload
+#  Les pages de livre utilisent MiniMessage. Gardez ~250 caractères par page
+#  (une page de livre = 14 lignes d'environ 19 caractères).
+#
+#  IMPORTANT : ce fichier n'est copié qu'à la première installation.
+#  Remplacez celui de plugins/BountyCraft/guide.yml puis faites /bountycraft reload.
+#  Les prix cités dans les pages viennent de config.yml et forge.yml :
+#  si vous les changez, mettez les pages à jour.
+# ======================================================================
+discord: "https://discord.gg/VOTRE-INVITATION"
+website: "https://www.votre-site.fr"
+
+rules-pages:
+  - |
+    <dark_red><bold>RÈGLES (1/3)</bold>
+
+    <black><bold>Triche</bold>
+    <dark_gray>X-ray et tout logiciel de triche : strictement interdit.
+
+    Mods autorisés : <black>Litematica<dark_gray>, <black>Xaero's Minimap<dark_gray> et les mods de records.
+  - |
+    <dark_red><bold>RÈGLES (2/3)</bold>
+
+    <black><bold>Semi-anarchie</bold>
+    <dark_gray>Grief, lava cast et pillage sont <black>autorisés<dark_gray>.
+
+    <dark_red>Interdits : <dark_gray>le spawn kill et la déco en plein combat.
+  - |
+    <dark_red><bold>RÈGLES (3/3)</bold>
+
+    <black><bold>Langage</bold>
+    <dark_gray>Pas d'insulte ni de langage grossier (-18).
+
+    <black><bold>Bugs</bold>
+    <dark_gray>Si vous en trouvez un, signalez-le à un modérateur au lieu de l'exploiter.
+
+howto-pages:
+  - |
+    <dark_green><bold>1/6 · L'ARGENT</bold>
+
+    <dark_gray>Départ : <black>500 $
+    <dark_gray>/bank : solde
+    /pay \<joueur> \<montant>
+    /baltop : classement
+
+    On en gagne avec les primes, les chasses, les quêtes et le Marchand.
+  - |
+    <dark_green><bold>2/6 · LE HUNTER</bold>
+
+    <dark_gray>Choisissez une cible puis tuez-la en <black>1 h<dark_gray>.
+    Prime jusqu'à <black>2 000 $<dark_gray> (elle baisse si la cible est souvent tuée).
+    Cible prévenue, sans votre nom.
+    /contract : suivre/annuler
+  - |
+    <dark_green><bold>3/6 · LES CHASSES</bold>
+
+    <dark_gray>Un admin lance /hunt : 30 min pour traquer un joueur. Boss bar : temps, prime, coordonnées.
+    Le tueur empoche la prime.
+    <dark_red>Chasse BAN : la cible est bannie si elle meurt !
+  - |
+    <dark_green><bold>4/6 · REVENUS</bold>
+
+    <dark_gray>Quêtier : une quête par heure (<black>500 à 1 300 $<dark_gray>), à rapporter ou à tuer.
+
+    Marchand : rachète poissons et cultures, <black>1 à 3 $<dark_gray> pièce.
+  - |
+    <dark_green><bold>5/6 · FORGERON</bold>
+
+    <dark_gray>Tout est incassable. Accroupi = pouvoirs coupés.
+    Pioche 3x3x3 : 25 000 $
+    Hache : 20 000 $
+    Lame : 15 000 $
+    Arc : 12 000 $
+  - |
+    <dark_green><bold>6/6 · ALCHIMISTE</bold>
+
+    <dark_gray>8 élixirs, de 7 000 à 25 000 $. Seulement <black>5 par type<dark_gray> pour tout le serveur !
+    Un seul actif à la fois, perdu à la mort.
+    Compétence : touche <black>F<dark_gray> (End : Shift+F).
